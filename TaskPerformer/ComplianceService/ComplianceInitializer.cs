@@ -9,7 +9,7 @@ namespace TaskPerformer.ComplianceService
 {
     internal class ComplianceInitializer
     {
-        public void Init(Invoker invoker, Compliance compliance, CompanyData companyData)
+        public async Task Init(Invoker invoker, Compliance compliance, CompanyData companyData)
         {
             switch (compliance.Id)
             {

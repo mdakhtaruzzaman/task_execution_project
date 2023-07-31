@@ -16,7 +16,7 @@ namespace TaskPerformer.ComplianceService
             this.executor = executor;
         }
 
-        public void ExecuteTask()
+        public async Task ExecuteTask()
         {
             executor.Execute();
         }
