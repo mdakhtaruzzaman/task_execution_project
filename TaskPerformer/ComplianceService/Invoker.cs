@@ -18,7 +18,7 @@ namespace TaskPerformer.ComplianceService
 
         public async Task ExecuteTask()
         {
-            executor.Execute();
+            await executor.Execute();
         }
 
     }

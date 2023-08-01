@@ -33,7 +33,7 @@ namespace TaskPerformer.ComplianceService
             }
 
             // Invoker executes the command
-            invoker.ExecuteTask();
+            await invoker.ExecuteTask();
         }
     }
 }

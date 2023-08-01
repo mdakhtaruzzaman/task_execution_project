@@ -14,7 +14,7 @@ namespace TaskPerformer.ComplianceService
         {
             this.companyData = companyData;
         }
-        public void Execute()
+        public async Task Execute()
         {
             try
             {

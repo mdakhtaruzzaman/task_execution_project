@@ -8,6 +8,6 @@ namespace TaskPerformer.ComplianceService
 {
     internal interface IComplianceExecutor
     {
-        void Execute();
+        Task Execute();
     }
 }
