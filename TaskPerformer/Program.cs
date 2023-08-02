@@ -27,22 +27,17 @@ class Program
                 Console.WriteLine($"ID: {companyData.Id}\tCompany Name: {companyData.CompanyName}\tState: {companyData.State}\tTotal Emp: {companyData.NumberOfEmp}\tMale Emp: {companyData.MaleEmp}\tFemale Emp: {companyData.FemaleEmp}\tAbove 50 Age: {companyData.Above50Age}");
                 Console.WriteLine();
 
-                // Client creates the invoker and associates it with the commands
-                Invoker invoker = new Invoker();
-                StateCompliance stateCompliance = stateCompliances.Where(_ => _.State.Equals(companyData.State)).FirstOrDefault();
-                foreach (var item in stateCompliance.Compliances)
+                var compliance = stateCompliances.Where(_=>_.State.Equals(companyData.State)).FirstOrDefault();
+                if(compliance != null)
                 {
-                    ComplianceInitializer complianceInitializer = new ComplianceInitializer();
-                    await complianceInitializer.Init(invoker, item, companyData);
+                    compliance.TaskHandler.HandleTask(companyData);
                 }
-
                 Console.WriteLine();
                 Console.WriteLine("################################ END ############################");
+                Console.WriteLine();
             }
         }
 
-
+        Console.ReadKey();
     }
 }
-
-
