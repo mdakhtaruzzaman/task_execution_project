@@ -28,10 +28,8 @@ class Program
                 Console.WriteLine();
 
                 var compliance = stateCompliances.Where(_=>_.State.Equals(companyData.State)).FirstOrDefault();
-                if(compliance != null)
-                {
-                    compliance.TaskHandler.HandleTask(companyData);
-                }
+                compliance?.TaskHandler.HandleTask(companyData);
+
                 Console.WriteLine();
                 Console.WriteLine("################################ END ############################");
                 Console.WriteLine();

@@ -26,11 +26,9 @@ namespace TaskPerformer.ComplianceService
                 Console.WriteLine($"Compliance: {_compliance.Name} started!");
                 Console.WriteLine($"Compliance: {_compliance.Name} {successornot}");
                 Console.WriteLine($"Compliance: {_compliance.Name} started!");
-                
-                // code for: update request as completed into db
 
-                if (_handler != null)
-                    _handler.HandleTask(companyData);
+                // code for: update request as completed into db
+                _handler?.HandleTask(companyData);
             }
             catch (Exception ex)
             {
