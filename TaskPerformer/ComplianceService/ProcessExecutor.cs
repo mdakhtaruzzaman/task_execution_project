@@ -8,29 +8,27 @@ using TaskPerformer.Model;
 
 namespace TaskPerformer.ComplianceService
 {
-    internal class TaskExecutor : TaskHandler
+    internal class ProcessExecutor : ProcessHandler
     {
-        private readonly Compliance _compliance;
-        public TaskExecutor(Compliance compliance)
+        private readonly Process _process;
+        public ProcessExecutor(Process process)
         {
-            this._compliance = compliance;
+            this._process = process;
         }
-        public override void HandleTask(CompanyData companyData)
+        public override void HandleTask(ProcessData processData)
         {
             try
             {
                 // code for:  check request from db its completed or not
                 // code for:  if not completed
-                // code for:  get role
-                // code for:  apply role
                 var random = new Random();
                 var successornot = random.Next(10) % 2 == 0 ?"Done":"Not Done";
-                Console.WriteLine($"Compliance: {_compliance.Name} started!");
-                Console.WriteLine($"Compliance: {_compliance.Name} {successornot}");
-                Console.WriteLine($"Compliance: {_compliance.Name} started!");
+                Console.WriteLine($"Process: {_process.Name} started!");
+                Console.WriteLine($"Process: {_process.Name} {successornot}");
+                Console.WriteLine($"Process: {_process.Name} started!");
 
                 // code for: update request as completed into db
-                _handler?.HandleTask(companyData);
+                _handler?.HandleTask(processData);
             }
             catch (Exception ex)
             {
